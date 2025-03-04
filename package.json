@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "name": "assessment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cameronotoole44/assessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cameronotoole44/assessment/issues"
+  },
+  "homepage": "https://github.com/cameronotoole44/assessment#readme"
+}
