@@ -6,10 +6,13 @@ app.use(express.json());
 
 app.post('/webhook', async (req: Request, res: Response) => {
     const payload = req.body;
+    const headers = req.headers;
+
     console.log('recieved payload:', payload);
+    console.log('recieved headers:', headers);
 
     try {
-        await fs.writeFile('payload.json', JSON.stringify(payload, null, 2));
+        await fs.writeFile('headers.json', JSON.stringify(payload, null, 2));
         console.log('payload saved to payload.json')
     } catch (err) {
         console.error('error saving the payload:', err);
@@ -21,6 +24,8 @@ app.post('/webhook', async (req: Request, res: Response) => {
         payload.secret?.message || // incase its nested
         payload.secretMessage || // camelCase check
         payload.secretCode || // checks out this phrasing 
+        headers['x-secret'] ||
+        headers['secret'] || //  check if secret is in the headers? unless its supposed to be blank
         'no secret found';
     console.log('secret message:', secretMessage);
 
